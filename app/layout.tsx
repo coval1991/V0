@@ -2,10 +2,15 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { ThirdwebProvider } from "@thirdweb-dev/react"
 import { Polygon } from "@thirdweb-dev/chains"
 import { Toaster } from "react-hot-toast"
 import { AuthProvider } from "@/contexts/AuthContext"
+
+import dynamic from "next/dynamic"
+
+const ThirdwebProvider = dynamic(() => import("@thirdweb-dev/react").then((mod) => mod.ThirdwebProvider), {
+  ssr: false,
+})
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -14,7 +19,6 @@ export const metadata: Metadata = {
   description:
     "Official portal for CasinoFound (CFD) token on Polygon network. Finance the future of online casinos with profit distribution in USDT.",
   keywords: "CasinoFound, CFD, token, cryptocurrency, Polygon, MATIC, casino, blockchain",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
