@@ -60,8 +60,8 @@
     "tailwindcss": "^3.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.0.0",
-    "crypto-browserify": "^3.12.0", // <-- Adicione esta linha
-    "stream-browserify": "^3.0.0" // <-- Adicione esta linha
+    "crypto-browserify": "^3.12.0",
+    "stream-browserify": "^3.0.0"
   },
   "engines": {
     "node": ">=18",
