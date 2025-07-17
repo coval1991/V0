@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-black: #121212;
+  --primary-purple: #4400ff;
+  --primary-gold: #ffd700;
+  --secondary-purple: #6600cc;
+  --dark-gray: #1a1a1a;
+  --light-gray: #2a2a2a;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(135deg, var(--primary-black) 0%, var(--dark-gray) 100%);
+  color: white;
+  min-height: 100vh;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, var(--primary-purple), var(--primary-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-gradient {
+  background: linear-gradient(135deg, rgba(68, 0, 255, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
+  border: 1px solid rgba(68, 0, 255, 0.3);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, var(--primary-purple), var(--secondary-purple));
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(68, 0, 255, 0.3);
+}
+
+.btn-gold {
+  background: linear-gradient(45deg, var(--primary-gold), #ffa500);
+  color: var(--primary-black);
+  border: none;
+  font-weight: 600;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+}
+
+.casino-pattern {
+  background-image: radial-gradient(circle at 25% 25%, rgba(68, 0, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+}
+
+.loading-spinner {
+  border: 2px solid rgba(68, 0, 255, 0.3);
+  border-top: 2px solid var(--primary-purple);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from {
+    box-shadow: 0 0 20px rgba(68, 0, 255, 0.4);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(68, 0, 255, 0.8);
+  }
+}
